@@ -40,7 +40,7 @@ export default function Home() {
         maxW={1440}
         minH={[168, 251, 335]}
         mx="auto"
-        px={[4, 20, 140]}
+        px={[4, 20, 20, 140]}
         alignItems="flex-start"
         justifyContent="space-between"
         bgImage="url('img/background.png')"
@@ -49,11 +49,11 @@ export default function Home() {
         // border="1px"
         // borderColor="red"
       >
-        <Flex marginTop={[7, 10, 20]} marginRight={[4]}>
+        <Flex marginTop={[7, 10, 20, 20]} marginRight={[4]}>
           <VStack spacing={[2, 5]} maxW={[400, 700, 700]} align="left">
             <Text
               maxWidth={426}
-              fontSize={[20, 24, 36]}
+              fontSize={[20, 24, 24, 36]}
               fontStyle="normal"
               fontWeight="500"
               color="light.text"
@@ -207,6 +207,24 @@ export default function Home() {
           border={['1px', '1px', '1px', '2px']}
         />
       </Flex>
+
+      <Text
+        mt={[6, 6, 6, 14]}
+        maxW={839}
+        mx="auto"
+        fontSize={[20, 24, 28, 36]}
+        fontStyle="normal"
+        fontWeight="500"
+        color="dark.text"
+        noOfLines={2}
+        textAlign="center"
+        // border="1px"
+        // borderColor="red"
+      >
+        Vamos nessa?
+        <br />
+        Então escolha seu continente
+      </Text>
     </>
   );
 }
