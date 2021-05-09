@@ -195,7 +195,18 @@ export default function Home() {
         </Flex>
       </Flex>
 
-      {/* <Divider borderColor="dark.text" marginTop={9} /> */}
+      <Flex
+        marginTop={[9, 9, 9, 20]}
+        maxW={1160}
+        mx="auto"
+        justifyContent="center"
+      >
+        <Divider
+          borderColor="dark.text"
+          width={['60px', '70px', '80px', '90px']}
+          border={['1px', '1px', '1px', '2px']}
+        />
+      </Flex>
     </>
   );
 }

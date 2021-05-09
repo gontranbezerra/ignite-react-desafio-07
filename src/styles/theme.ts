@@ -75,9 +75,6 @@ const config = {
     heading: 'Poppins',
     body: 'Poppins',
   },
-  divider: {
-    size: '60px',
-  },
   styles: {
     global: (props: any) => ({
       body: {
