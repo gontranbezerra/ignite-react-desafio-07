@@ -13,13 +13,24 @@ import {
   Circle,
   Divider,
 } from '@chakra-ui/react';
-import { rootCertificates } from 'node:tls';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination } from 'swiper/core';
+
+// import 'swiper/swiper.min.css';
+// import 'swiper/components/navigation/navigation.min.css';
+// import 'swiper/components/pagination/pagination.min.css';
+
+SwiperCore.use([Pagination, Navigation]);
 
 export default function Home() {
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
   });
+
+  // const pagination = {
+  //   clickable: true,
+  // };
 
   return (
     <>
@@ -111,8 +122,8 @@ export default function Home() {
           )}
           <Text
             fontStyle="normal"
-            fontWeight={['500', '500', '500', '600']}
-            fontSize={['18', '18', '18', '24']}
+            fontWeight={[500, 500, 500, 600]}
+            fontSize={[18, 18, 18, 24]}
           >
             vida noturna
           </Text>
@@ -130,8 +141,8 @@ export default function Home() {
           )}
           <Text
             fontStyle="normal"
-            fontWeight={['500', '500', '500', '600']}
-            fontSize={['18', '18', '18', '24']}
+            fontWeight={[500, 500, 500, 600]}
+            fontSize={[18, 18, 18, 24]}
           >
             praia
           </Text>
@@ -149,8 +160,8 @@ export default function Home() {
           )}
           <Text
             fontStyle="normal"
-            fontWeight={['500', '500', '500', '600']}
-            fontSize={['18', '18', '18', '24']}
+            fontWeight={[500, 500, 500, 600]}
+            fontSize={[18, 18, 18, 24]}
           >
             moderno
           </Text>
@@ -168,8 +179,8 @@ export default function Home() {
           )}
           <Text
             fontStyle="normal"
-            fontWeight={['500', '500', '500', '600']}
-            fontSize={['18', '18', '18', '24']}
+            fontWeight={[500, 500, 500, 600]}
+            fontSize={[18, 18, 18, 24]}
           >
             clássico
           </Text>
@@ -187,8 +198,8 @@ export default function Home() {
           )}
           <Text
             fontStyle="normal"
-            fontWeight={['500', '500', '500', '600']}
-            fontSize={['18', '18', '18', '24']}
+            fontWeight={[500, 500, 500, 600]}
+            fontSize={[18, 18, 18, 24]}
           >
             e mais...
           </Text>
@@ -225,6 +236,259 @@ export default function Home() {
         <br />
         Então escolha seu continente
       </Text>
+
+      <Flex mt={12} mb={10} maxW={1240} mx="auto">
+        <Swiper
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          // style={{
+          //   '--swiper-navigation-size': '16px',
+          // }}
+        >
+          <SwiperSlide>
+            <Flex
+              width="full"
+              minH={[375, 400, 425, 450]}
+              alignItems="center"
+              justifyContent="center"
+              direction="column"
+              bgImage="url('img/europa.png')"
+              bgPosition="top"
+              bgRepeat="no-repeat"
+              _before={{
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                left: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(28, 20, 1, 0.35)',
+              }}
+            >
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[24, 28, 36, 48]}
+                color="light.text"
+              >
+                América do Norte
+              </Text>
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[14, 18, 20, 24]}
+                color="light.text"
+              >
+                O continente mais antigo
+              </Text>
+            </Flex>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Flex
+              width="full"
+              minH={[375, 400, 425, 450]}
+              alignItems="center"
+              justifyContent="center"
+              direction="column"
+              bgImage="url('img/europa.png')"
+              bgPosition="top"
+              bgRepeat="no-repeat"
+              _before={{
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                left: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(28, 20, 1, 0.35)',
+              }}
+            >
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[24, 28, 36, 48]}
+                color="light.text"
+              >
+                América do Sul
+              </Text>
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[14, 18, 20, 24]}
+                color="light.text"
+              >
+                O continente mais antigo
+              </Text>
+            </Flex>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Flex
+              width="full"
+              minH={[375, 400, 425, 450]}
+              alignItems="center"
+              justifyContent="center"
+              direction="column"
+              bgImage="url('img/europa.png')"
+              bgPosition="top"
+              bgRepeat="no-repeat"
+              _before={{
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                left: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(28, 20, 1, 0.35)',
+              }}
+            >
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[24, 28, 36, 48]}
+                color="light.text"
+              >
+                Ásia
+              </Text>
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[14, 18, 20, 24]}
+                color="light.text"
+              >
+                O continente mais antigo
+              </Text>
+            </Flex>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Flex
+              width="full"
+              minH={[375, 400, 425, 450]}
+              alignItems="center"
+              justifyContent="center"
+              direction="column"
+              bgImage="url('img/europa.png')"
+              bgPosition="top"
+              bgRepeat="no-repeat"
+              _before={{
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                left: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(28, 20, 1, 0.35)',
+              }}
+            >
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[24, 28, 36, 48]}
+                color="light.text"
+              >
+                África
+              </Text>
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[14, 18, 20, 24]}
+                color="light.text"
+              >
+                O continente mais antigo
+              </Text>
+            </Flex>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Flex
+              width="full"
+              minH={[375, 400, 425, 450]}
+              alignItems="center"
+              justifyContent="center"
+              direction="column"
+              bgImage="url('img/europa.png')"
+              bgPosition="top"
+              bgRepeat="no-repeat"
+              _before={{
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                left: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(28, 20, 1, 0.35)',
+              }}
+            >
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[24, 28, 36, 48]}
+                color="light.text"
+              >
+                Europa
+              </Text>
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[14, 18, 20, 24]}
+                color="light.text"
+              >
+                O continente mais antigo
+              </Text>
+            </Flex>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Flex
+              width="full"
+              minH={[375, 400, 425, 450]}
+              alignItems="center"
+              justifyContent="center"
+              direction="column"
+              bgImage="url('img/europa.png')"
+              bgPosition="top"
+              bgRepeat="no-repeat"
+              _before={{
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                left: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(28, 20, 1, 0.35)',
+              }}
+            >
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[24, 28, 36, 48]}
+                color="light.text"
+              >
+                Oceania
+              </Text>
+              <Text
+                position="relative"
+                fontStyle="normal"
+                fontWeight="bold"
+                fontSize={[14, 18, 20, 24]}
+                color="light.text"
+              >
+                O continente mais antigo
+              </Text>
+            </Flex>
+          </SwiperSlide>
+        </Swiper>
+      </Flex>
     </>
   );
 }

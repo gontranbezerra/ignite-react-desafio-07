@@ -1,0 +1,18 @@
+.swiper-button-prev {
+  /* margin-left: 42.5px; */
+  color: #ffba08;
+}
+
+.swiper-button-next {
+  /* margin-right: 42.5px; */
+  color: #ffba08;
+}
+
+.swiper-pagination-bullet {
+  /* width: 16px;
+  height: 16px; */
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffba08;
+}
