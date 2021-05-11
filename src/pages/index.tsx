@@ -243,9 +243,6 @@ export default function Home() {
             clickable: true,
           }}
           navigation={true}
-          // style={{
-          //   '--swiper-navigation-size': '16px',
-          // }}
         >
           <SwiperSlide>
             <Flex
@@ -254,7 +251,7 @@ export default function Home() {
               alignItems="center"
               justifyContent="center"
               direction="column"
-              bgImage="url('img/europa.png')"
+              bgImage="url('img/north_america.png')"
               bgPosition="top"
               bgRepeat="no-repeat"
               _before={{
@@ -294,7 +291,7 @@ export default function Home() {
               alignItems="center"
               justifyContent="center"
               direction="column"
-              bgImage="url('img/europa.png')"
+              bgImage="url('img/south_america.png')"
               bgPosition="top"
               bgRepeat="no-repeat"
               _before={{
@@ -334,7 +331,7 @@ export default function Home() {
               alignItems="center"
               justifyContent="center"
               direction="column"
-              bgImage="url('img/europa.png')"
+              bgImage="url('img/asian.png')"
               bgPosition="top"
               bgRepeat="no-repeat"
               _before={{
@@ -374,7 +371,7 @@ export default function Home() {
               alignItems="center"
               justifyContent="center"
               direction="column"
-              bgImage="url('img/europa.png')"
+              bgImage="url('img/africa.png')"
               bgPosition="top"
               bgRepeat="no-repeat"
               _before={{
@@ -414,7 +411,7 @@ export default function Home() {
               alignItems="center"
               justifyContent="center"
               direction="column"
-              bgImage="url('img/europa.png')"
+              bgImage="url('img/europe.png')"
               bgPosition="top"
               bgRepeat="no-repeat"
               _before={{
@@ -454,7 +451,7 @@ export default function Home() {
               alignItems="center"
               justifyContent="center"
               direction="column"
-              bgImage="url('img/europa.png')"
+              bgImage="url('img/oceania.png')"
               bgPosition="top"
               bgRepeat="no-repeat"
               _before={{
