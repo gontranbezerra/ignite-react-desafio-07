@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   Flex,
   Image,
-  Box,
-  Center,
   VStack,
   Text,
   useBreakpointValue,
-  HStack,
-  Wrap,
-  WrapItem,
   Circle,
   Divider,
 } from '@chakra-ui/react';
@@ -17,11 +12,14 @@ import useSWR from 'swr';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+import Header from '../components/Header';
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 SwiperCore.use([Pagination, Navigation]);
 
 interface ContinentsProps {
+  id: number;
   name: string;
   slogan: string;
   image: string;
@@ -38,7 +36,7 @@ export default function Home() {
 
   return (
     <>
-      <Flex
+      {/* <Flex
         maxW={1440}
         minH={[50, 75, 100]}
         mx="auto"
@@ -49,7 +47,8 @@ export default function Home() {
         <Flex alignItems="center" maxW={[100, 120, 185]}>
           <Image src="img/logo.svg" alt="Worldtrip" />
         </Flex>
-      </Flex>
+      </Flex> */}
+      <Header />
 
       <Flex
         maxW={1440}
