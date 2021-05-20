@@ -36,18 +36,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <Flex
-        maxW={1440}
-        minH={[50, 75, 100]}
-        mx="auto"
-        justifyContent="center"
-        // border="1px"
-        // borderColor="red"
-      >
-        <Flex alignItems="center" maxW={[100, 120, 185]}>
-          <Image src="img/logo.svg" alt="Worldtrip" />
-        </Flex>
-      </Flex> */}
       <Header />
 
       <Flex
@@ -58,7 +46,7 @@ export default function Home() {
         alignItems="flex-start"
         justifyContent="space-between"
         bgImage="url('img/background.png')"
-        bgPosition="top"
+        bgPosition="center"
         bgRepeat="no-repeat"
         // border="1px"
         // borderColor="red"
