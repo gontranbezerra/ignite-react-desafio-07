@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Flex,
   Image,
@@ -7,6 +6,8 @@ import {
   useBreakpointValue,
   Circle,
   Divider,
+  LinkBox,
+  LinkOverlay,
 } from '@chakra-ui/react';
 import useSWR from 'swr';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,11 +19,27 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 SwiperCore.use([Pagination, Navigation]);
 
+interface CitiesTop5 {
+  rank: number;
+  image: string;
+  city: string;
+  country: string;
+  flag: string;
+}
 interface ContinentsProps {
   id: number;
   name: string;
   slogan: string;
   image: string;
+  route: string;
+  details: {
+    image: string;
+    resume: string;
+    countries: number;
+    languages: number;
+    citiesTop100: number;
+    citiesTop5: CitiesTop5[];
+  };
 }
 
 export default function Home() {
@@ -32,7 +49,19 @@ export default function Home() {
   });
   const { data, error } = useSWR('/api/continents', fetcher);
 
-  if (error) console.error('Failed to load data!');
+  if (!data)
+    return (
+      <Flex mt="20%" justifyContent="center">
+        Carregando...
+      </Flex>
+    );
+
+  if (error || !data?.result)
+    return (
+      <Flex mt="20%" justifyContent="center">
+        Falha ao carregar dados.
+      </Flex>
+    );
 
   return (
     <>
@@ -244,6 +273,7 @@ export default function Home() {
         >
           {data &&
             data.result.map((continent: ContinentsProps, index: number) => (
+              // <LinkBox>
               <SwiperSlide key={index}>
                 <Flex
                   width="full"
@@ -271,7 +301,9 @@ export default function Home() {
                     fontSize={[24, 28, 36, 48]}
                     color="light.text"
                   >
-                    {continent.name}
+                    <LinkOverlay href={`/${continent.route}`}>
+                      {continent.name}
+                    </LinkOverlay>
                   </Text>
                   <Text
                     position="relative"
@@ -284,6 +316,7 @@ export default function Home() {
                   </Text>
                 </Flex>
               </SwiperSlide>
+              // </LinkBox>
             ))}
         </Swiper>
       </Flex>
