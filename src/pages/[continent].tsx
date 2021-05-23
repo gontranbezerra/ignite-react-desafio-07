@@ -14,7 +14,6 @@ import { useRouter } from 'next/router';
 import useSWR from 'swr';
 
 import Header from '../components/Header';
-import { continents } from '../../data';
 
 interface CitiesTop5 {
   rank: number;
@@ -74,12 +73,9 @@ export default function Continent() {
         minH={[150, 250, 350, 500]}
         mx="auto"
         position="relative"
-        // border="1px"
-        // borderColor="red"
       >
         <Flex
           width="full"
-          //   height="auto"
           bgSize="cover"
           bgImage={`url(${continent.image})`}
           bgPosition="center"
@@ -110,19 +106,14 @@ export default function Continent() {
 
       <Flex
         maxW={1440}
-        // px={120}
         mt={[2, 4, 6, 16]}
         mx="auto"
         justifyContent="center"
-        // border="1px"
-        // borderColor="red"
       >
         <Wrap
           spacing="0px"
           justify="center"
           align="center"
-          //   border="1px"
-          //   borderColor="green"
         >
           <WrapItem>
             <Text
@@ -139,8 +130,6 @@ export default function Continent() {
               minW={[343, 400, 400, 490]}
               ml={[0, 0, 0, 14]}
               justifyContent="space-between"
-              //   border="1px"
-              //   borderColor="green"
             >
               <VStack spacing="0px">
                 <Text
@@ -211,8 +200,6 @@ export default function Continent() {
         mb={[35]}
         mx="auto"
         alignItems="flex-start"
-        // border="1px"
-        // borderColor="red"
       >
         <Text
           fontSize={[24, 28, 32, 36]}
@@ -227,8 +214,6 @@ export default function Continent() {
           spacing={[4, 6, 8, 10]}
           direction="row"
           justify={['center', 'center', 'left', 'left']}
-          // border="1px"
-          // borderColor="blue"
         >
           {continent.details.citiesTop5.map((top5) => (
             <WrapItem key={top5.rank}>
@@ -259,151 +244,6 @@ export default function Continent() {
               </Box>
             </WrapItem>
           ))}
-          {/* <WrapItem>
-            <Box
-              maxW={256}
-              border="1px solid rgba(255, 186, 8, 0.5)"
-              borderRadius="4px"
-              overflow="hidden"
-            >
-              <Image src="img/card/london.png" alt="Londres" />
-              <HStack mt={18} mx={6} mb={25} justifyContent="space-between">
-                <Flex flexDirection="column">
-                  <Text fontFamily="Barlow" fontSize={20} fontWeight={600}>
-                    Londres
-                  </Text>
-                  <Text
-                    mt="12px"
-                    fontFamily="Barlow"
-                    fontSize={16}
-                    fontWeight={500}
-                    color="dark.info"
-                  >
-                    Reino Unido
-                  </Text>
-                </Flex>
-                <Image
-                  src="img/card/flag/united_kingdom.png"
-                  alt="Reino Unido"
-                />
-              </HStack>
-            </Box>
-          </WrapItem>
-
-          <WrapItem>
-            <Box
-              maxW={256}
-              border="1px solid rgba(255, 186, 8, 0.5)"
-              borderRadius="4px"
-              overflow="hidden"
-            >
-              <Image src="img/card/paris.png" alt="Londres" />
-              <HStack mt={18} mx={6} mb={25} justifyContent="space-between">
-                <Flex flexDirection="column">
-                  <Text fontFamily="Barlow" fontSize={20} fontWeight={600}>
-                    Paris
-                  </Text>
-                  <Text
-                    mt="12px"
-                    fontFamily="Barlow"
-                    fontSize={16}
-                    fontWeight={500}
-                    color="dark.info"
-                  >
-                    França
-                  </Text>
-                </Flex>
-                <Image src="img/card/flag/france.png" alt="França" />
-              </HStack>
-            </Box>
-          </WrapItem>
-
-          <WrapItem>
-            <Box
-              maxW={256}
-              border="1px solid rgba(255, 186, 8, 0.5)"
-              borderRadius="4px"
-              overflow="hidden"
-            >
-              <Image src="img/card/rome.png" alt="Londres" />
-              <HStack mt={18} mx={6} mb={25} justifyContent="space-between">
-                <Flex flexDirection="column">
-                  <Text fontFamily="Barlow" fontSize={20} fontWeight={600}>
-                    Roma
-                  </Text>
-                  <Text
-                    mt="12px"
-                    fontFamily="Barlow"
-                    fontSize={16}
-                    fontWeight={500}
-                    color="dark.info"
-                  >
-                    Itália
-                  </Text>
-                </Flex>
-                <Image src="img/card/flag/italy.png" alt="Itália" />
-              </HStack>
-            </Box>
-          </WrapItem>
-
-          <WrapItem>
-            <Box
-              maxW={256}
-              border="1px solid rgba(255, 186, 8, 0.5)"
-              borderRadius="4px"
-              overflow="hidden"
-            >
-              <Image src="img/card/prague.png" alt="Londres" />
-              <HStack mt={18} mx={6} mb={25} justifyContent="space-between">
-                <Flex flexDirection="column">
-                  <Text fontFamily="Barlow" fontSize={20} fontWeight={600}>
-                    Praga
-                  </Text>
-                  <Text
-                    mt="12px"
-                    fontFamily="Barlow"
-                    fontSize={16}
-                    fontWeight={500}
-                    color="dark.info"
-                  >
-                    República Tcheca
-                  </Text>
-                </Flex>
-                <Image
-                  src="img/card/flag/czech_republic.png"
-                  alt="Repúblic Tcheca"
-                />
-              </HStack>
-            </Box>
-          </WrapItem>
-
-          <WrapItem>
-            <Box
-              maxW={256}
-              border="1px solid rgba(255, 186, 8, 0.5)"
-              borderRadius="4px"
-              overflow="hidden"
-            >
-              <Image src="img/card/amsterdam.png" alt="Londres" />
-              <HStack mt={18} mx={6} mb={25} justifyContent="space-between">
-                <Flex flexDirection="column">
-                  <Text fontFamily="Barlow" fontSize={20} fontWeight={600}>
-                    Amsterdã
-                  </Text>
-                  <Text
-                    mt="12px"
-                    fontFamily="Barlow"
-                    fontSize={16}
-                    fontWeight={500}
-                    color="dark.info"
-                  >
-                    Holanda
-                  </Text>
-                </Flex>
-                <Image src="img/card/flag/netherlands.png" alt="Holanda" />
-              </HStack>
-            </Box>
-          </WrapItem> */}
         </Wrap>
       </VStack>
     </>

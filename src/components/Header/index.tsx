@@ -1,4 +1,4 @@
-import { Flex, Image, Link, LinkOverlay } from '@chakra-ui/react';
+import { Flex, Image, Link } from '@chakra-ui/react';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -6,7 +6,6 @@ import React from 'react';
 export default function Header() {
   const router = useRouter();
   const isRoot = router.asPath==='/' ? true: false;
-  // console.log('Header.router: ', router);
 
   return (
     <>

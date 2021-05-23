@@ -6,7 +6,6 @@ import {
   useBreakpointValue,
   Circle,
   Divider,
-  LinkBox,
   LinkOverlay,
 } from '@chakra-ui/react';
 import useSWR from 'swr';
@@ -77,8 +76,6 @@ export default function Home() {
         bgImage="url('img/background.png')"
         bgPosition="center"
         bgRepeat="no-repeat"
-        // border="1px"
-        // borderColor="red"
       >
         <Flex marginTop={[7, 10, 20, 20]} marginRight={[4]}>
           <VStack spacing={[2, 5]} maxW={[400, 700, 700]} align="left">
@@ -249,22 +246,13 @@ export default function Home() {
         color="dark.text"
         noOfLines={2}
         textAlign="center"
-        // border="1px"
-        // borderColor="red"
       >
         Vamos nessa?
         <br />
         Então escolha seu continente
       </Text>
 
-      <Flex
-        mt={12}
-        mb={10}
-        maxW={1240}
-        mx="auto"
-        // border="1px"
-        // borderColor="red"
-      >
+      <Flex mt={12} mb={10} maxW={1240} mx="auto">
         <Swiper
           pagination={{
             clickable: true,
@@ -273,7 +261,6 @@ export default function Home() {
         >
           {data &&
             data.result.map((continent: ContinentsProps, index: number) => (
-              // <LinkBox>
               <SwiperSlide key={index}>
                 <Flex
                   width="full"
@@ -316,7 +303,6 @@ export default function Home() {
                   </Text>
                 </Flex>
               </SwiperSlide>
-              // </LinkBox>
             ))}
         </Swiper>
       </Flex>
