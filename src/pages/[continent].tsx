@@ -15,28 +15,7 @@ import useSWR from 'swr';
 
 import Header from '../components/Header';
 
-interface CitiesTop5 {
-  rank: number;
-  image: string;
-  city: string;
-  country: string;
-  flag: string;
-}
-interface ContinentProps {
-  id: number;
-  name: string;
-  slogan: string;
-  image: string;
-  route: string;
-  details: {
-    image: string;
-    resume: string;
-    countries: number;
-    languages: number;
-    citiesTop100: number;
-    citiesTop5: CitiesTop5[];
-  };
-}
+import { ContinentProps } from '../types';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 

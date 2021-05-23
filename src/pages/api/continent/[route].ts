@@ -2,28 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { continents } from '../../../../data';
 
-interface CitiesTop5 {
-  rank: number;
-  image: string;
-  city: string;
-  country: string;
-  flag: string;
-}
-interface ContinentProps {
-  id: number;
-  name: string;
-  slogan: string;
-  image: string;
-  route: string;
-  details: {
-    image: string;
-    resume: string;
-    countries: number;
-    languages: number;
-    citiesTop100: number;
-    citiesTop5: CitiesTop5[];
-  };
-}
+import { ContinentProps } from '../../../types'
 
 export default function continentHandler(
   req: NextApiRequest,

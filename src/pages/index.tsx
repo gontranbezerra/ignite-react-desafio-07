@@ -14,32 +14,11 @@ import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 
 import Header from '../components/Header';
 
+import { ContinentProps } from '../types';
+
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 SwiperCore.use([Pagination, Navigation]);
-
-interface CitiesTop5 {
-  rank: number;
-  image: string;
-  city: string;
-  country: string;
-  flag: string;
-}
-interface ContinentsProps {
-  id: number;
-  name: string;
-  slogan: string;
-  image: string;
-  route: string;
-  details: {
-    image: string;
-    resume: string;
-    countries: number;
-    languages: number;
-    citiesTop100: number;
-    citiesTop5: CitiesTop5[];
-  };
-}
 
 export default function Home() {
   const isWideVersion = useBreakpointValue({
@@ -260,7 +239,7 @@ export default function Home() {
           navigation={true}
         >
           {data &&
-            data.result.map((continent: ContinentsProps, index: number) => (
+            data.result.map((continent: ContinentProps, index: number) => (
               <SwiperSlide key={index}>
                 <Flex
                   width="full"
